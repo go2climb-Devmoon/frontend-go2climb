@@ -16,12 +16,6 @@ pipeline {
             }
         }
 
-       stage('build app') {
-            steps {
-                bat 'npm run build'
-            }
-        }
-
       stage('deploy') {
             steps {
                 bat 'ng serve'
