@@ -11,18 +11,13 @@ pipeline {
             }
         }
         
-        stage('Build') {
+        stage('Build Deploy') {
             steps {
                 // Realiza una construcción de producción de la aplicación Angular
                 bat 'npm run build'
             }
         }
 
-        stage('Start App') {
-            steps {
-                // Inicia la aplicación Angular localmente
-                bat 'npm start'
-            }
-        }
+        
     }
 }
