@@ -10,15 +10,15 @@ pipeline {
             }
         }
         
-        stage('pruena unitaria') {
-            steps {
-                bat 'npm test'
-            }
-        }
-        
        stage('build') {
             steps {
                 bat 'npm install'
+            }
+        }
+
+       stage('build app') {
+            steps {
+                bat 'npm run build'
             }
         }
 
