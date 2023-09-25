@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        nodejs "node" // Asegúrate de que Node.js esté configurado como una herramienta global en Jenkins
+        nodejs "node"
     }
     stages {
         stage('Install Dependencias') {
@@ -14,14 +14,14 @@ pipeline {
         stage('Build') {
             steps {
                 // Realiza una construcción de producción de la aplicación Angular
-                bat 'ng build'
+                bat 'npm run build'
             }
         }
 
-        stage('Deploy') {
+        stage('Start App') {
             steps {
-                // Inicia el servidor de desarrollo local con ng serve
-                bat 'ng serve --open'
+                // Inicia la aplicación Angular localmente
+                bat 'npm start'
             }
         }
     }
