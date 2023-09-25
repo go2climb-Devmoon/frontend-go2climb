@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Realiza una construcción de producción de la aplicación Angular
-                bat 'ng build --prod'
+                bat 'ng build'
             }
         }
 
