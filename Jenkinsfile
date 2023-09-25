@@ -4,19 +4,25 @@ pipeline {
         nodejs "node"
     }
     stages {
-        stage('install dependencias') {
+        stage('Install Dependencias') {
             steps {
                 bat 'npm install'
             }
         }
         
-       stage('build') {
+       stage('Build') {
             steps {
                 bat 'npm install'
             }
         }
 
-      stage('deploy') {
+       stage('Build App') {
+          steps {
+              bat 'ng build'
+          }
+      }
+
+      stage('Deploy') {
             steps {
                 bat 'ng serve'
             }
