@@ -22,10 +22,4 @@ pipeline {
           }
       }
 
-      stage('Deploy') {
-            steps {
-                bat 'ng serve'
-            }
-        }
-    }
 }
